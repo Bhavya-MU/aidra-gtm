@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Anveza Aidra-E · Strategic Report 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"><\/script>
+<style>
+:root{--bg:#0b0b10;--surface:#111118;--surface2:#16161f;--border:#1f1f2e;--border2:#2a2a3d;--gold:#c9a84c;--gold2:#e8c97a;--teal:#2dd4bf;--red:#f87171;--amber:#fbbf24;--text:#f0f0f8;--muted:#7070a0;--muted2:#9090b8;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;display:flex;}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:222px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:100;}
+.sb-brand{padding:26px 22px 22px;border-bottom:1px solid var(--border);}
+.sb-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;line-height:1.25;color:var(--text);}
+.sb-name em{color:var(--gold);font-style:italic;}
+.sb-sub{font-size:9px;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase;margin-top:5px;font-family:'JetBrains Mono',monospace;}
+.sb-nav{flex:1;padding:16px 0;overflow-y:auto;}
+.nav-i{display:flex;align-items:center;gap:10px;padding:10px 22px;cursor:pointer;transition:all 0.2s;border-left:2px solid transparent;color:var(--muted);font-size:12.5px;letter-spacing:0.2px;}
+.nav-i:hover{color:var(--text);background:rgba(201,168,76,0.04);}
+.nav-i.active{color:var(--gold);border-left-color:var(--gold);background:rgba(201,168,76,0.06);}
+.nav-n{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);min-width:18px;}
+.nav-i.active .nav-n{color:var(--gold);}
+.sb-foot{padding:18px 22px;border-top:1px solid var(--border);font-size:9px;color:var(--muted);line-height:1.7;font-family:'JetBrains Mono',monospace;}
+.main{margin-left:222px;flex:1;min-height:100vh;}
+.tp{display:none;padding:52px 60px 80px;max-width:1080px;}
+.tp.active{display:block;}
+.ph{margin-bottom:48px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+.ey{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.ey::after{content:'';flex:1;height:1px;background:var(--border2);}
+.pt{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,50px);font-weight:700;line-height:1.1;letter-spacing:-0.5px;margin-bottom:14px;}
+.pt em{font-style:italic;color:var(--gold);}
+.pd{font-size:14px;color:var(--muted2);line-height:1.85;max-width:680px;font-weight:300;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:26px;}
+.csm{padding:18px 22px;}
+.cgold{border-color:rgba(201,168,76,0.22);background:linear-gradient(135deg,rgba(201,168,76,0.04),var(--surface));}
+.cteal{border-color:rgba(45,212,191,0.18);}
+.cred{border-color:rgba(248,113,113,0.18);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.gap24{gap:24px;}
+.sv{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1;color:var(--gold);}
+.sl{font-size:12px;color:var(--muted);margin-top:5px;}
+.ss{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);margin-top:7px;opacity:0.65;}
+.dvd{height:1px;background:var(--border);margin:32px 0;}
+.stl{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;margin-bottom:18px;color:var(--text);}
+.stl em{font-style:italic;color:var(--gold);}
+.badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;}
+.bop{background:rgba(45,212,191,0.1);color:var(--teal);border:1px solid rgba(45,212,191,0.25);}
+.brk{background:rgba(248,113,113,0.1);color:var(--red);border:1px solid rgba(248,113,113,0.25);}
+.bwt{background:rgba(251,191,36,0.1);color:var(--amber);border:1px solid rgba(251,191,36,0.25);}
+.cbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;}
+.clbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;}
+.snote{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-top:10px;opacity:0.65;}
+table.dt{width:100%;border-collapse:collapse;font-size:12.5px;}
+table.dt th{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);font-weight:500;}
+table.dt td{padding:12px 14px;border-bottom:1px solid rgba(31,31,46,0.55);color:var(--muted2);vertical-align:top;line-height:1.5;}
+table.dt tr:last-child td{border-bottom:none;}
+table.dt tr:hover td{background:rgba(201,168,76,0.025);}
+table.dt td:first-child{color:var(--text);font-weight:500;}
+.tg{color:var(--teal)!important;font-weight:500!important;}
+.ta{color:var(--amber)!important;font-weight:500!important;}
+.tr{color:var(--red)!important;font-weight:500!important;}
+.tm{color:var(--muted)!important;}
+.chip{display:inline-block;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:500;font-family:'JetBrains Mono',monospace;letter-spacing:0.5px;}
+.cs{background:rgba(45,212,191,0.1);color:var(--teal);border:1px solid rgba(45,212,191,0.28);}
+.ct{background:rgba(251,191,36,0.1);color:var(--amber);border:1px solid rgba(251,191,36,0.28);}
+.cp{background:rgba(112,112,160,0.1);color:var(--muted);border:1px solid rgba(112,112,160,0.18);}
+.swot-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3px;border-radius:12px;overflow:hidden;}
+.swot-q{padding:26px;}
+.sw-s{background:rgba(45,212,191,0.055);border:1px solid rgba(45,212,191,0.14);}
+.sw-w{background:rgba(248,113,113,0.055);border:1px solid rgba(248,113,113,0.14);}
+.sw-o{background:rgba(201,168,76,0.055);border:1px solid rgba(201,168,76,0.14);}
+.sw-t{background:rgba(251,191,36,0.045);border:1px solid rgba(251,191,36,0.12);}
+.sw-hd{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:7px;}
+.sw-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.sw-list{display:flex;flex-direction:column;gap:10px;}
+.sw-item{font-size:12.5px;color:var(--muted2);line-height:1.55;padding-left:13px;position:relative;}
+.sw-item::before{content:'·';position:absolute;left:0;color:var(--muted);font-size:17px;top:-4px;}
+.sw-item strong{color:var(--text);font-weight:500;}
+.pg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.pc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;}
+.pl{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;line-height:1;margin-bottom:3px;}
+.pn{font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;font-family:'JetBrains Mono',monospace;}
+.pi-list{display:flex;flex-direction:column;gap:8px;}
+.pi-row{padding:9px 11px;background:rgba(255,255,255,0.018);border-radius:7px;border:1px solid var(--border);}
+.pi-top{display:flex;justify-content:space-between;align-items:flex-start;gap:7px;margin-bottom:3px;}
+.pi-title{font-size:11.5px;font-weight:500;color:var(--text);line-height:1.4;flex:1;}
+.pi-sub{font-size:10.5px;color:var(--muted);line-height:1.5;}
+.cc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;position:relative;}
+.cc.ours{border-color:rgba(45,212,191,0.32);background:linear-gradient(135deg,rgba(45,212,191,0.04),var(--surface));}
+.cn{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:5px;}
+.ct2{font-size:11.5px;color:var(--muted);margin-bottom:16px;line-height:1.55;}
+.ot{position:absolute;top:14px;right:14px;background:rgba(45,212,191,0.1);color:var(--teal);border:1px solid rgba(45,212,191,0.28);padding:2px 9px;border-radius:100px;font-size:8.5px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;}
+.ar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px;}
+.al{font-size:10.5px;color:var(--muted);min-width:130px;}
+.ab{flex:1;height:3px;background:var(--border2);border-radius:2px;overflow:hidden;}
+.af{height:100%;border-radius:2px;}
+.sp{display:flex;flex-direction:column;gap:5px;margin-bottom:16px;}
+.sh{display:flex;justify-content:space-between;align-items:center;}
+.slbl{font-size:11.5px;color:var(--muted);}
+.sval{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--gold);font-weight:500;}
+input[type=range]{width:100%;height:3px;accent-color:var(--gold);cursor:pointer;}
+.krow{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:22px 0;}
+.kbox{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:13px 10px;text-align:center;}
+.kv{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1;}
+.kl{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);letter-spacing:1.5px;margin-top:5px;text-transform:uppercase;}
+.sw2{overflow-x:auto;margin-top:20px;}
+.st2{width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:10.5px;}
+.st2 th{padding:9px 13px;color:var(--muted);font-size:9px;letter-spacing:1px;border-bottom:1px solid var(--border2);text-align:right;}
+.st2 th:first-child{text-align:left;}
+.st2 td{padding:8px 13px;text-align:right;font-weight:500;}
+.st2 td:first-child{text-align:left;color:var(--text);}
+.tl{position:relative;padding-left:30px;}
+.tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--gold),var(--teal));}
+.ph2{position:relative;margin-bottom:36px;}
+.pdot{position:absolute;left:-26px;top:5px;width:13px;height:13px;border-radius:50%;border:2px solid var(--gold);background:var(--bg);}
+.phd{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;}
+.pnum{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--gold);letter-spacing:2px;}
+.ptitle{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;}
+.ptime{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-left:auto;}
+.pbody{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:18px 22px;}
+.psteps{display:flex;flex-direction:column;gap:8px;}
+.pstep{font-size:12.5px;color:var(--muted2);line-height:1.6;padding-left:14px;position:relative;}
+.pstep::before{content:'→';position:absolute;left:0;color:var(--muted);font-size:10px;top:2px;}
+.pstep strong{color:var(--text);font-weight:500;}
+.fn{display:flex;flex-direction:column;align-items:center;gap:2px;}
+.fs{display:flex;justify-content:space-between;align-items:center;padding:9px 18px;border-radius:5px;}
+.fl{font-size:11.5px;color:rgba(240,240,248,0.8);}
+.fv{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;}
+.ifr{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:20px;}
+.ifbtn{padding:5px 14px;border-radius:100px;border:1px solid var(--border2);background:transparent;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:9px;cursor:pointer;letter-spacing:1px;transition:all 0.2s;}
+.ifbtn:hover,.ifbtn.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.06);}
+.igrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;}
+.icard{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:16px 12px;text-align:center;transition:all 0.22s;}
+.icard:hover{border-color:var(--border2);transform:translateY(-2px);}
+.iav{width:48px;height:48px;border-radius:50%;margin:0 auto 9px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#fff;}
+.iname{font-size:11.5px;font-weight:500;margin-bottom:2px;color:var(--text);line-height:1.3;}
+.icity{font-size:9.5px;color:var(--muted);margin-bottom:6px;}
+.ichip{display:inline-block;padding:2px 7px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:0.8px;}
+.hw{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:52px 60px;}
+.hey{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--gold);letter-spacing:4px;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:12px;}
+.hey::after{content:'';width:44px;height:1px;background:var(--gold);opacity:0.35;}
+.htitle{font-family:'Playfair Display',serif;font-size:clamp(38px,6vw,70px);font-weight:700;line-height:1.05;letter-spacing:-1px;margin-bottom:10px;}
+.htitle em{font-style:italic;color:var(--gold);}
+.hsub{font-family:'Playfair Display',serif;font-size:clamp(15px,2vw,20px);font-weight:400;font-style:italic;color:var(--muted2);margin-bottom:32px;line-height:1.5;}
+.hdesc{font-size:14px;color:var(--muted);line-height:1.9;max-width:580px;margin-bottom:44px;font-weight:300;}
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:11px;overflow:hidden;margin-bottom:44px;max-width:740px;}
+.hstat{background:var(--surface);padding:18px 22px;}
+.hsv{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);}
+.hsl{font-size:11px;color:var(--muted);margin-top:3px;}
+.hss{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);margin-top:3px;opacity:0.55;}
+.sbtn{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#0b0b10;padding:12px 26px;border-radius:7px;font-family:'Jost',sans-serif;font-weight:600;font-size:13.5px;cursor:pointer;border:none;letter-spacing:0.3px;transition:all 0.2s;}
+.sbtn:hover{background:var(--gold2);}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
+@media(max-width:860px){.sidebar{width:180px;}.main{margin-left:180px;}.tp,.hw{padding:36px 20px 60px;}.g2,.g3,.swot-wrap,.pg{grid-template-columns:1fr;}.krow{grid-template-columns:repeat(3,1fr);}.hstats{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sb-brand">
+    <div class="sb-name">Anveza <em>Aidra-E</em></div>
+    <div class="sb-sub">Capstone · 2026</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="nav-i active" data-tab="overview"><span class="nav-n">00</span>Overview</div>
+    <div class="nav-i" data-tab="market"><span class="nav-n">01</span>Market Assessment</div>
+    <div class="nav-i" data-tab="institutions"><span class="nav-n">02</span>Target Institutions</div>
+    <div class="nav-i" data-tab="competitors"><span class="nav-n">03</span>Competitive Landscape</div>
+    <div class="nav-i" data-tab="swot"><span class="nav-n">04</span>SWOT Analysis</div>
+    <div class="nav-i" data-tab="pestel"><span class="nav-n">05</span>PESTEL Analysis</div>
+    <div class="nav-i" data-tab="vrio"><span class="nav-n">06</span>VRIO Analysis</div>
+    <div class="nav-i" data-tab="revenue"><span class="nav-n">07</span>Revenue Model</div>
+    <div class="nav-i" data-tab="gtm"><span class="nav-n">08</span>Go-to-Market</div>
+  </nav>
+  <div class="sb-foot">March 2026<br/>Strategic Intelligence Report</div>
+</div>
+<div class="main">
+
+<!-- 00 -->
+<div class="tp active" id="tab-overview">
+<div class="hw">
+  <div class="hey">Strategic Intelligence Report</div>
+  <h1 class="htitle">Anveza <em>Aidra-E</em></h1>
+  <div class="hsub">Go-to-Market Strategy &amp; Financial Feasibility</div>
+  <p class="hdesc">Aidra-E is Anveza's answer sheet processing platform built for extracting answers from scanned papers, annotating, and digitally correcting student papers. Core positioning: secure, privacy-preserving, locally deployable generative AI for teacher productivity — structurally distinct from every major competitor in the category.</p>
+  <div class="hstats">
+    <div class="hstat"><div class="hsv">USD 196.4M</div><div class="hsl">India EdTech AI market (2024)</div><div class="hss">Grand View Research, 2025b</div></div>
+    <div class="hstat"><div class="hsv">32.4% CAGR</div><div class="hsl">Projected growth to 2030</div><div class="hss">Grand View Research, 2025b</div></div>
+    <div class="hstat"><div class="hsv">86%</div><div class="hsl">Education orgs using GenAI</div><div class="hss">Microsoft, 2025 — highest across all industries</div></div>
+    <div class="hstat"><div class="hsv">15,000+</div><div class="hsl">Answer papers piloted</div><div class="hss">Management &amp; engineering programmes (Anveza, 2025)</div></div>
+  </div>
+  <button class="sbtn" onclick="go('market')">Begin Reading →</button>
+  <div class="dvd" style="margin-top:44px;max-width:740px;"></div>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);line-height:1.85;max-width:740px;">
+    <strong style="color:var(--muted2);">Summary position (Market Research Report, March 2026):</strong> Aidra-E appears best positioned as a privacy-first, locally deployable institutional AI copilot for educators. The strongest near-term opportunity is the narrower segment where teacher productivity needs overlap with institutional demand for privacy, governance, and deployment control.
+    <br/><br/><span style="opacity:0.55;">Sources: Market Research Report (Capstone, March 2026) · Grand View Research AI in Education Market Reports (2025a, 2025b, 2025c) · Microsoft AI in Education Report (2025) · UNESCO AI Guidance for Education (2023, 2024) · Ministry of Education, Government of India — Union Budget 2025-26 · DPDP Act 2023 · UGC/AISHE · Kang et al. (2025) Electronics 14(17) · MagicSchool · Khanmigo (Khan Academy) · SchoolAI · Smartail AI · Gradescope (Turnitin)</span>
+  </div>
+</div>
+</div>
+
+<!-- 01 MARKET -->
+<div class="tp" id="tab-market">
+<div class="ph">
+  <div class="ey">01 — Market Assessment</div>
+  <h2 class="pt">The <em>opportunity</em> in numbers</h2>
+  <p class="pd">All market figures from Grand View Research (2025). Aidra-E is assessed against the narrower market for AI-powered teacher productivity platforms — not the entire EdTech market.</p>
+</div>
+<div class="stl">Market Size — Reported Endpoints</div>
+<div class="g3" style="margin-bottom:22px;">
+  <div class="card cgold"><div class="sv">USD 5.88B</div><div class="sl">Global AI in education — 2024</div><div style="font-size:12px;color:var(--muted2);margin-top:10px;">Projected: <strong style="color:var(--gold2);">USD 32.27B</strong> by 2030 at 31.2% CAGR</div><div class="ss">Source: Grand View Research, 2025a</div></div>
+  <div class="card cgold"><div class="sv">USD 196.4M</div><div class="sl">India AI in education — 2024</div><div style="font-size:12px;color:var(--muted2);margin-top:10px;">Projected: <strong style="color:var(--gold2);">USD 1,140.3M</strong> by 2030 at 32.4% CAGR</div><div class="ss">Source: Grand View Research, 2025b</div></div>
+  <div class="card cgold"><div class="sv">USD 2,606.6M</div><div class="sl">Global higher education AI — 2024</div><div style="font-size:12px;color:var(--muted2);margin-top:10px;">Projected: <strong style="color:var(--gold2);">USD 14,522.6M</strong> by 2030 at 31.5% CAGR</div><div class="ss">Source: Grand View Research, 2025c</div></div>
+</div>
+<div class="g2 gap24" style="margin-bottom:28px;">
+  <div class="cbox"><div class="clbl">India AI in Education — USD Million (2024–2030)</div><canvas id="mktC" height="230"></canvas><div class="snote">Endpoints 2024 and 2030 are reported. 2025–2029 interpolated at 32.4% CAGR. Source: GVR, 2025b.</div></div>
+  <div class="cbox"><div class="clbl">Global Deployment Split (2024)</div><canvas id="depC" height="230"></canvas><div class="snote">Cloud = 60.1% of global AI-in-education revenue. Source: GVR, 2025a.</div></div>
+</div>
+<div class="dvd"></div>
+<div class="stl">Demand Drivers</div>
+<div class="g2 gap24">
+  <div style="font-size:13px;color:var(--muted2);line-height:1.85;font-weight:300;">
+    <p style="margin-bottom:13px;"><strong style="color:var(--text);font-weight:500;">1. Rapid GenAI adoption.</strong> Microsoft (2025) reports 86% of education organisations use generative AI — the highest rate across all industries. The market no longer needs to be convinced AI has value; the question is which tools institutions trust and how they want them governed.</p>
+    <p style="margin-bottom:13px;"><strong style="color:var(--text);font-weight:500;">2. Teacher workload crisis.</strong> Competitor messaging across MagicSchool, Khanmigo, and SchoolAI converges on time savings and reduced administrative burden — confirming productivity is the core value proposition in this category.</p>
+    <p style="margin-bottom:13px;"><strong style="color:var(--text);font-weight:500;">3. Safe, human-centred AI emphasis.</strong> UNESCO's guidance for generative AI in education and its AI competency framework for teachers both signal that privacy, governance, and educator readiness are increasingly central to the adoption decision. (UNESCO, 2023; 2024)</p>
+    <p><strong style="color:var(--text);font-weight:500;">4. Policy momentum in India.</strong> The Ministry of Education announced a Centre of Excellence in AI for Education with a Rs. 500 crore outlay in the Union Budget 2025-26. (MoE, 2025a; CBSE, 2022)</p>
+  </div>
+  <div class="cbox">
+    <div class="clbl">Key statistics at a glance</div>
+    <table class="dt">
+      <thead><tr><th>Statistic</th><th>Figure</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Education orgs using GenAI</td><td class="tg">86%</td><td class="tm">Microsoft, 2025</td></tr>
+        <tr><td>India market CAGR 2024–2030</td><td class="tg">32.4%</td><td class="tm">GVR, 2025b</td></tr>
+        <tr><td>Global market CAGR 2024–2030</td><td class="tg">31.2%</td><td class="tm">GVR, 2025a</td></tr>
+        <tr><td>Cloud share of AI-in-ed revenue</td><td class="ta">60.1%</td><td class="tm">GVR, 2025a</td></tr>
+        <tr><td>Govt. CoE AI outlay (Budget)</td><td class="ta">Rs. 500 Cr</td><td class="tm">MoE, 2025a</td></tr>
+        <tr><td>India universities</td><td class="tm">1,000+</td><td class="tm">UGC/AISHE</td></tr>
+        <tr><td>India colleges</td><td class="tm">40,000+</td><td class="tm">UGC/AISHE</td></tr>
+        <tr><td>Aidra-E papers piloted</td><td class="tg">15,000+</td><td class="tm">Anveza, 2025</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="dvd"></div>
+<div class="stl">The Problem Aidra-E Solves</div>
+<div class="card" style="font-size:13px;color:var(--muted2);line-height:1.85;font-weight:300;">
+  India's education system runs on a massive, structurally strained institutional base with over 1,000 universities and 40,000+ colleges, where faculty-to-student ratios are stretched and administrative burden on educators is high. <strong style="color:var(--text);font-weight:500;">The manual evaluation of answer sheets sits at the centre of this burden.</strong>
+  <br/><br/>The market is dominated by cloud-first platforms — 60.1% of global AI-in-education revenue in 2024 — yet most Indian institutions cannot accept the data governance trade-offs that come with sending student data to external servers. India's DPDP Act (2023) creates real legal exposure for institutions using unmanaged cloud AI.
+  <br/><br/><strong style="color:var(--gold);font-weight:500;">The gap: AI tools that genuinely reduce educator workload exist, but none are designed specifically for institutions that require privacy and strict data security.</strong>
+  <div class="snote" style="margin-top:12px;">Source: Anveza Aidra-E Strategic Intelligence Report, Section 1 (Problem Statement)</div>
+</div>
+</div>
+
+<!-- 02 INSTITUTIONS -->
+<div class="tp" id="tab-institutions">
+<div class="ph">
+  <div class="ey">02 — Target Institutions</div>
+  <h2 class="pt">The <em>beachhead</em> market</h2>
+  <p class="pd">Higher education is the strongest initial beachhead. Universities are more likely to have formal IT governance, internal data protection concerns, and the technical capacity to evaluate locally deployable systems. Source: Market Research Report, Section 5.</p>
+</div>
+<div class="g2 gap24" style="margin-bottom:28px;">
+  <div>
+    <div class="stl">Why Higher Education First</div>
+    <div style="font-size:13px;color:var(--muted2);line-height:1.85;font-weight:300;">
+      <p style="margin-bottom:12px;"><strong style="color:var(--text);font-weight:500;">Scale per customer.</strong> One university equals thousands of answer papers per semester. The ROI case is immediate and calculable.</p>
+      <p style="margin-bottom:12px;"><strong style="color:var(--text);font-weight:500;">Formal IT governance.</strong> Universities have procurement processes that evaluate data security seriously — making the DPDP Act compliance argument a genuine advantage.</p>
+      <p style="margin-bottom:12px;"><strong style="color:var(--text);font-weight:500;">Technical capacity.</strong> Can evaluate and operate a locally deployed system, unlike under-resourced K-12 schools.</p>
+      <p style="margin-bottom:12px;"><strong style="color:var(--text);font-weight:500;">Validated in pilot.</strong> The 15,000+ paper pilot was conducted across management and engineering programmes — exactly these institutional contexts.</p>
+      <p><strong style="color:var(--text);font-weight:500;">Individual teachers are hardest to defend.</strong> They can already access generic AI tools without an institutional buying process — direct-to-teacher is highly competitive and vulnerable to substitution.</p>
+    </div>
+    <div class="snote" style="margin-top:10px;">Source: Market Research Report, Section 5 — Customer Segmentation</div>
+  </div>
+  <div>
+    <div class="stl">Buyer Segment Comparison</div>
+    <table class="dt" style="margin-bottom:16px;">
+      <thead><tr><th>Buyer Type</th><th>Privacy Sensitivity</th><th>IT Capacity</th><th>Recommendation</th></tr></thead>
+      <tbody>
+        <tr><td>Higher education</td><td class="tg">High</td><td class="tg">High</td><td class="tg">Beachhead</td></tr>
+        <tr><td>School networks</td><td class="ta">Medium</td><td class="ta">Medium</td><td class="ta">Phase 2</td></tr>
+        <tr><td>Training / coaching orgs</td><td class="ta">Medium</td><td class="tm">Variable</td><td class="ta">Secondary</td></tr>
+        <tr><td>Individual teachers</td><td class="tm">Low</td><td class="tm">Low</td><td class="tr">Not defensible</td></tr>
+      </tbody>
+    </table>
+    <div class="snote" style="margin-bottom:16px;">Source: Market Research Report, Section 5</div>
+    <div class="cbox"><div class="clbl">Indian higher education — institution types</div><canvas id="instTypeC" height="190"></canvas><div class="snote">Approximate counts. Source: UGC/AISHE.</div></div>
+  </div>
+</div>
+<div class="dvd"></div>
+<div class="stl">Institution Directory</div>
+<p style="font-size:11px;color:var(--muted);margin-bottom:18px;font-family:'JetBrains Mono',monospace;line-height:1.6;">Representative institutions across India's higher education landscape — potential Aidra-E customers based on programme type, scale, and IT governance maturity.</p>
+<div class="ifr" id="instFilters">
+  <button class="ifbtn active" data-f="all">All</button>
+  <button class="ifbtn" data-f="iit">IITs</button>
+  <button class="ifbtn" data-f="nit">NITs</button>
+  <button class="ifbtn" data-f="central">Central Universities</button>
+  <button class="ifbtn" data-f="state">State Universities</button>
+  <button class="ifbtn" data-f="private">Private Universities</button>
+</div>
+<div class="igrid" id="instGrid"></div>
+</div>
+
+<!-- 03 COMPETITORS -->
+<div class="tp" id="tab-competitors">
+<div class="ph">
+  <div class="ey">03 — Competitive Landscape</div>
+  <h2 class="pt">The field and our <em>edge</em></h2>
+  <p class="pd">Source: Market Research Report, Sections 5–7. Competitor data from company websites and product pages (2026). Three groups: education-native productivity platforms, general-purpose AI tools educators use informally, and locally deployable AI systems. Aidra-E occupies the third — least crowded, most defensible.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;margin-bottom:28px;" id="compGrid"></div>
+<div class="dvd"></div>
+<div class="g2 gap24">
+  <div class="cbox"><div class="clbl">Competitive positioning radar</div><canvas id="radarC" height="300"></canvas><div class="snote">Qualitative scores from product pages and Market Research Report, Sections 5–6. Not independently verified.</div></div>
+  <div>
+    <div class="stl">Aidra-E's Structural Edge</div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="card csm cteal"><div style="font-size:10px;font-weight:500;color:var(--teal);margin-bottom:5px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">DPDP ACT 2023</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.6;">Cloud competitors must contractually guarantee data protection compliance. Aidra-E's local model means student data never leaves the institution — removing Anveza from the data processor liability chain entirely.</div></div>
+      <div class="card csm cteal"><div style="font-size:10px;font-weight:500;color:var(--teal);margin-bottom:5px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">60.1% CLOUD — THE OPENING</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.6;">Market baseline is cloud-dominated. This creates a differentiation opening for Aidra-E among institutional buyers willing to trade simplicity for stronger privacy and deployment control. (GVR, 2025a)</div></div>
+      <div class="card csm cteal"><div style="font-size:10px;font-weight:500;color:var(--teal);margin-bottom:5px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">ANSWER SHEET SPECIFICITY</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.6;">No mainstream competitor targets the handwritten answer sheet evaluation workflow specifically for Indian institutions. MagicSchool, Khanmigo, and SchoolAI are lesson-planning tools — not built for the Indian examination model.</div></div>
+      <div class="card csm cred"><div style="font-size:10px;font-weight:500;color:var(--red);margin-bottom:5px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">RISK: COMMODITISATION</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.6;">Basic content generation is unlikely to be a durable moat on its own. Aidra-E cannot rely on content generation alone. (Market Research, Section 6)</div></div>
+    </div>
+  </div>
+</div>
+<div class="dvd"></div>
+<div class="stl">Competitor Summary Table</div>
+<div style="overflow-x:auto;">
+  <table class="dt">
+    <thead><tr><th>Player</th><th>Core Value Proposition</th><th>Buyer</th><th>Deployment</th><th>Implication for Aidra-E</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--teal);">Aidra-E (Anveza)</td><td>Teacher productivity with secure, privacy-preserving, locally deployable GenAI</td><td>Institutions</td><td class="tg">Local — core differentiator</td><td>Lead with governance + productivity narrative</td></tr>
+      <tr><td>MagicSchool</td><td>80+ teacher tools, district solutions, enterprise security</td><td>Teachers, districts</td><td class="ta">Cloud-forward</td><td>Strong breadth competitor; dominant in feature count</td></tr>
+      <tr><td>Khanmigo</td><td>Teaching assistant with prep support, classroom activities, progress reports</td><td>Teachers</td><td class="ta">Cloud; strong trust brand</td><td>Competes on workflow usefulness and Khan brand equity</td></tr>
+      <tr><td>SchoolAI</td><td>Lesson plans, rubrics, assessments, time savings</td><td>Teachers, schools</td><td class="ta">Cloud; classroom platform</td><td>Competes on ease and grassroots adoption</td></tr>
+      <tr><td>Smartail AI</td><td>AI-powered automated grading of handwritten answers with analytics</td><td>Schools, K-12</td><td class="ta">Cloud-based</td><td>Closest direct competitor on assessment automation</td></tr>
+      <tr><td>Gradescope (Turnitin)</td><td>AI-assisted grading of exams at scale, rubric-based, LMS-integrated</td><td>Universities</td><td class="ta">Cloud; LMS-integrated</td><td>Competes on grading infrastructure and scale efficiency</td></tr>
+    </tbody>
+  </table>
+  <div class="snote" style="margin-top:8px;">Source: Market Research Report, Section 5 — Exhibit 2. Company websites and product pages, 2026.</div>
+</div>
+</div>
+
+<!-- 04 SWOT -->
+<div class="tp" id="tab-swot">
+<div class="ph">
+  <div class="ey">04 — SWOT Analysis</div>
+  <h2 class="pt">Strengths, Weaknesses,<br/><em>Opportunities</em>, Threats</h2>
+  <p class="pd">Source: SWOT Analysis document (Capstone, 2026) and Strategic Intelligence Report, Section 2. All points sourced directly from these documents.</p>
+</div>
+<div class="swot-wrap">
+  <div class="swot-q sw-s">
+    <div class="sw-hd" style="color:var(--teal)"><div class="sw-dot" style="background:var(--teal)"></div>Strengths</div>
+    <div class="sw-list">
+      <div class="sw-item"><strong>Privacy-first, locally deployable AI</strong> — a combination few competitors offer</div>
+      <div class="sw-item"><strong>Reduces teacher workload</strong> — directly addresses the most documented pain point; confirmed by competitor messaging convergence</div>
+      <div class="sw-item"><strong>Fits institutional needs</strong> — designed for schools and universities that prioritise data control and governance</div>
+      <div class="sw-item"><strong>Growing market</strong> — AI in education expanding at 32.4% CAGR in India (GVR, 2025b)</div>
+      <div class="sw-item"><strong>DPDP Act structural advantage</strong> — removed from the data processor liability chain entirely (DPDP Act, 2023)</div>
+    </div>
+  </div>
+  <div class="swot-q sw-w">
+    <div class="sw-hd" style="color:var(--red)"><div class="sw-dot" style="background:var(--red)"></div>Weaknesses</div>
+    <div class="sw-list">
+      <div class="sw-item"><strong>Limited real-world proof</strong> — pilot results still emerging beyond the initial 15,000-paper pilot</div>
+      <div class="sw-item"><strong>Implementation complexity</strong> — local deployment demands more effort from institutions than simple cloud tools</div>
+      <div class="sw-item"><strong>Low brand awareness</strong> — unknown to most educators and decision-makers relative to established players</div>
+      <div class="sw-item"><strong>Early-stage legal capacity</strong> — SLAs, data liability clauses, and indemnification terms are a real operational burden</div>
+    </div>
+  </div>
+  <div class="swot-q sw-o">
+    <div class="sw-hd" style="color:var(--gold)"><div class="sw-dot" style="background:var(--gold)"></div>Opportunities</div>
+    <div class="sw-list">
+      <div class="sw-item"><strong>Rs. 500 Cr. govt. CoE</strong> — Union Budget 2025-26 allocation for AI-in-education infrastructure (MoE, 2025a)</div>
+      <div class="sw-item"><strong>NEP 2020 mandate</strong> — policy justification for institutional procurement decision-makers</div>
+      <div class="sw-item"><strong>Very few privacy-focused AI tools</strong> — competition in the data-governance segment of EdTech AI is thin</div>
+      <div class="sw-item"><strong>1,000+ universities, 40,000+ colleges</strong> — massive institutional base with high answer sheet volume (UGC/AISHE)</div>
+      <div class="sw-item"><strong>Regulatory timing window</strong> — India's AI regulatory framework still forming; establish position before compliance costs harden</div>
+    </div>
+  </div>
+  <div class="swot-q sw-t">
+    <div class="sw-hd" style="color:var(--amber)"><div class="sw-dot" style="background:var(--amber)"></div>Threats</div>
+    <div class="sw-list">
+      <div class="sw-item"><strong>Free and generic AI tools</strong> — ChatGPT-type tools substitute basic content generation at zero cost</div>
+      <div class="sw-item"><strong>Long institutional sales cycles</strong> — public-sector procurement is slow and document-heavy; multi-quarter timelines</div>
+      <div class="sw-item"><strong>Positioning risk</strong> — too technical sounds like infrastructure; too broad invites comparison with larger platforms</div>
+      <div class="sw-item"><strong>Cloud-first buyer expectations</strong> — dominates buyer familiarity and ease-of-adoption expectations</div>
+      <div class="sw-item"><strong>Teacher resistance</strong> — professional identity concerns can undermine actual usage even after institutional purchase</div>
+    </div>
+  </div>
+</div>
+<div class="dvd"></div>
+<div class="card cgold" style="font-size:13px;color:var(--muted2);line-height:1.8;font-weight:300;">
+  <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--gold);margin-bottom:10px;">Strategic read from the SWOT</div>
+  Focused institutional strategy — leading with governance and privacy as strengths, targeting the window of low privacy-focused competition as the primary opportunity, while mitigating the risk of long sales cycles through narrow, well-evidenced pilots.
+  <div class="snote" style="margin-top:10px;">Source: SWOT Analysis (Capstone, 2026) and Strategic Intelligence Report, Section 2</div>
+</div>
+</div>
+
+<!-- 05 PESTEL -->
+<div class="tp" id="tab-pestel">
+<div class="ph">
+  <div class="ey">05 — PESTEL Analysis</div>
+  <h2 class="pt">The <em>macro environment</em></h2>
+  <p class="pd">Source: PESTEL Analysis document (Capstone, 2026) and Strategic Intelligence Report, Section 4. OPP = Opportunity · RISK = Risk · WATCH = Monitor over time.</p>
+</div>
+<div class="pg" id="pestelGrid"></div>
+<div class="dvd"></div>
+<div class="stl">Cross-Factor Strategic Reads</div>
+<div class="g3">
+  <div class="card csm cteal"><div style="font-size:10px;font-weight:500;color:var(--teal);margin-bottom:7px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">PRIVACY CONVERGENCE</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.65;">The DPDP Act (Legal), India's data localisation push (Political), and 60.1% cloud-first revenue share (Technological) all point to the same conclusion: local deployment is a genuine, defensible advantage — not merely a product preference.</div></div>
+  <div class="card csm cgold"><div style="font-size:10px;font-weight:500;color:var(--gold);margin-bottom:7px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">DEMAND VS CONVERSION</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.65;">Social and Economic factors confirm demand exists — 86% GenAI adoption, teacher workload crisis, massive institutional base. The bottleneck is not creating demand but converting it through effective pilots and credible proof points.</div></div>
+  <div class="card csm" style="border-color:rgba(251,191,36,0.18);"><div style="font-size:10px;font-weight:500;color:var(--amber);margin-bottom:7px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">REGULATORY WINDOW</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.65;">India's AI regulatory framework is still forming. MeitY has signalled intent but no binding rules exist yet. First-mover institutional relationships built now become significantly more valuable once regulation arrives.</div></div>
+</div>
+<div class="snote" style="margin-top:14px;">Source: Strategic Intelligence Report, Section 4.1 — Cross-Factor Strategic Reads</div>
+</div>
+
+<!-- 06 VRIO -->
+<div class="tp" id="tab-vrio">
+<div class="ph">
+  <div class="ey">06 — VRIO Analysis</div>
+  <h2 class="pt">Internal <em>resource assessment</em></h2>
+  <p class="pd">Source: VRIO Analysis document (Capstone, 2026) and Strategic Intelligence Report, Section 3. Assesses Anveza Aidra-E's internal resources against four criteria: Value, Rarity, Imitability, and Organisation.</p>
+</div>
+<div class="stl">Resource-Level Assessment</div>
+<div style="overflow-x:auto;margin-bottom:28px;">
+  <table class="dt">
+    <thead><tr><th>Resource</th><th>Valuable?</th><th>Rare?</th><th>Hard to Imitate?</th><th>Organised?</th><th>Implication</th></tr></thead>
+    <tbody>
+      <tr><td>Proprietary Learning Algorithms</td><td class="tg">Yes</td><td class="tg">Yes — custom-built, constantly refined on user data</td><td class="tg">Difficult — requires reverse engineering, deep AI expertise, comparable data</td><td class="tg">Yes — integrated into all platform aspects</td><td><span class="chip cs">Sustained Advantage</span></td></tr>
+      <tr><td>User Data and Analytics</td><td class="tg">Yes</td><td class="tg">Yes — unique dataset of user interactions and learning outcomes</td><td class="tg">Difficult — requires substantial user base and time to collect</td><td class="tg">Yes — systematically collected, analysed, integrated</td><td><span class="chip cs">Sustained Advantage</span></td></tr>
+      <tr><td>AI-Powered Educational Platform</td><td class="tg">Yes</td><td class="ta">Potentially — AI tech is becoming more common</td><td class="tg">Difficult — replicating algorithms, training data, UX requires significant investment</td><td class="tg">Yes — structured to develop, maintain, and enhance</td><td><span class="chip ct">Temporary Advantage</span></td></tr>
+      <tr><td>Strong Brand Reputation</td><td class="tg">Yes</td><td class="ta">Potentially — if known for reliability and innovation</td><td class="tg">Difficult — building a strong brand takes time and consistent quality</td><td class="tg">Yes — actively promoted through marketing</td><td><span class="chip ct">Temporary Advantage</span></td></tr>
+      <tr><td>Extensive Content Library</td><td class="tg">Yes</td><td class="ta">Potentially — depth and breadth including niche subjects</td><td class="ta">Possible — competitors can create or license similar content over time</td><td class="tg">Yes — systems for managing, updating, expanding</td><td><span class="chip cp">Competitive Parity</span></td></tr>
+    </tbody>
+  </table>
+  <div class="snote" style="margin-top:8px;">Source: VRIO Analysis (Capstone, 2026)</div>
+</div>
+<div class="dvd"></div>
+<div class="stl">Competitive VRIO Comparison</div>
+<div class="g2 gap24" style="margin-bottom:24px;">
+  <div style="overflow-x:auto;">
+    <table class="dt">
+      <thead><tr><th>Dimension</th><th>Anveza Aidra-E</th><th>MagicSchool</th><th>Khanmigo</th><th>SchoolAI</th></tr></thead>
+      <tbody>
+        <tr><td>Value</td><td class="tg">High — personalised learning, efficient content delivery</td><td class="ta">Moderate — curriculum design, lesson planning</td><td class="tg">High — personalised tutoring</td><td class="ta">Moderate — AI-driven school insights</td></tr>
+        <tr><td>Rarity</td><td class="tg">High — proprietary algorithms, unique user data</td><td class="ta">Moderate — wide range of tools</td><td class="ta">Moderate — Khan Academy integration</td><td class="ta">Moderate — comprehensive school management</td></tr>
+        <tr><td>Imitability</td><td class="tg">Difficult — expertise and data access required</td><td class="ta">Possible — competitors can develop similar tools</td><td class="ta">Possible — similar tutoring platforms could be built</td><td class="ta">Possible — integrated school platforms are replicable</td></tr>
+        <tr><td>Organisation</td><td class="tg">Yes — integrated into all platform aspects</td><td class="tg">Yes — utilised across different services</td><td class="tg">Yes — central to Khan Academy's approach</td><td class="tg">Yes — central to data analysis and functionality</td></tr>
+        <tr><td>Implication</td><td><span class="chip cs">Sustained Advantage</span></td><td><span class="chip cp">Competitive Parity</span></td><td><span class="chip cp">Competitive Parity</span></td><td><span class="chip cp">Competitive Parity</span></td></tr>
+      </tbody>
+    </table>
+    <div class="snote" style="margin-top:8px;">Source: VRIO Analysis (Capstone, 2026)</div>
+  </div>
+  <div class="cbox"><div class="clbl">VRIO qualitative score comparison</div><canvas id="vrioC" height="240"></canvas><div class="snote">Qualitative scores (0–100) derived from VRIO Analysis document.</div></div>
+</div>
+<div class="card cgold">
+  <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--gold);margin-bottom:10px;">Key VRIO Insight</div>
+  <div style="font-size:13px;color:var(--muted2);line-height:1.8;font-weight:300;">Proprietary learning algorithms and accumulated user data are the <strong style="color:var(--text);">only two resources meeting all four VRIO criteria</strong>. These are the moats worth protecting and deepening. All other current resources — the platform, content library, and brand — represent temporary advantages that could erode without continued investment.</div>
+  <div class="snote" style="margin-top:10px;">Source: Strategic Intelligence Report, Section 3.3</div>
+</div>
+</div>
+
+<!-- 07 REVENUE -->
+<div class="tp" id="tab-revenue">
+<div class="ph">
+  <div class="ey">07 — Revenue Model</div>
+  <h2 class="pt">Financial <em>feasibility</em></h2>
+  <p class="pd">All inputs are assumptions — no actual company financials were used. Recommended pricing: per-institution annual license. Sales &amp; marketing cost fixed at Rs. 3,00,000/year across all scenarios.</p>
+</div>
+<div class="g2 gap24" style="margin-bottom:24px;">
+  <div class="card">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;margin-bottom:16px;">REVENUE INPUTS</div>
+    <div class="sp"><div class="sh"><span class="slbl">Annual license per institution</span><span class="sval" id="sv-price">Rs. 5.0L</span></div><input type="range" id="s-price" min="100000" max="1000000" step="50000" value="500000"/></div>
+    <div class="sp"><div class="sh"><span class="slbl">Year 1 institutions</span><span class="sval" id="sv-y1">5</span></div><input type="range" id="s-y1" min="1" max="20" step="1" value="5"/></div>
+    <div class="sp"><div class="sh"><span class="slbl">Year 2 institutions</span><span class="sval" id="sv-y2">15</span></div><input type="range" id="s-y2" min="1" max="50" step="1" value="15"/></div>
+    <div class="sp"><div class="sh"><span class="slbl">Year 3 institutions</span><span class="sval" id="sv-y3">35</span></div><input type="range" id="s-y3" min="1" max="100" step="1" value="35"/></div>
+  </div>
+  <div class="card">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;margin-bottom:16px;">COST &amp; RATE INPUTS</div>
+    <div class="sp"><div class="sh"><span class="slbl">Initial investment (R&amp;D + setup)</span><span class="sval" id="sv-inv">Rs. 25L</span></div><input type="range" id="s-inv" min="500000" max="10000000" step="250000" value="2500000"/></div>
+    <div class="sp"><div class="sh"><span class="slbl">Onboarding cost per institution</span><span class="sval" id="sv-onb">Rs. 50K</span></div><input type="range" id="s-onb" min="10000" max="200000" step="5000" value="50000"/></div>
+    <div class="sp"><div class="sh"><span class="slbl">Annual support per institution</span><span class="sval" id="sv-sup">Rs. 30K</span></div><input type="range" id="s-sup" min="5000" max="100000" step="5000" value="30000"/></div>
+    <div class="sp"><div class="sh"><span class="slbl">Discount rate (hurdle rate)</span><span class="sval" id="sv-disc">12%</span></div><input type="range" id="s-disc" min="5" max="40" step="1" value="12"/><div style="font-size:9px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:3px;">Standard for Indian startup risk profile</div></div>
+  </div>
+</div>
+<div class="krow" id="kpiStrip"></div>
+<div class="g2 gap24" style="margin-bottom:22px;">
+  <div class="cbox"><div class="clbl">Revenue vs Operating Costs — 3 years</div><canvas id="revC" height="220"></canvas></div>
+  <div class="cbox"><div class="clbl">Cumulative Cash Flow</div><canvas id="cfC" height="220"></canvas></div>
+</div>
+<div class="dvd"></div>
+<div class="stl">DCF Working Table</div>
+<div style="overflow-x:auto;margin-bottom:22px;">
+  <table class="dt"><thead><tr><th>Year</th><th>Revenue</th><th>Operating Costs</th><th>Net Cash Flow</th><th>Discount Factor</th><th>DCF</th><th>Cumulative PV</th></tr></thead><tbody id="dcfBody"></tbody></table>
+  <div class="snote" style="margin-top:6px;">Discount factor = 1 / (1 + r)^n where r = current discount rate.</div>
+</div>
+<div class="dvd"></div>
+<div class="stl">NPV Sensitivity — Y1 Institutions × Annual Price</div>
+<p style="font-size:11px;color:var(--muted);margin-bottom:14px;font-family:'JetBrains Mono',monospace;">NPV across combinations. Other inputs at current slider values. Green = positive NPV, red = negative.</p>
+<div class="sw2" id="sensWrap"></div>
+<div class="dvd"></div>
+<div class="stl">IRR Working</div>
+<div class="g2 gap24">
+  <div class="cbox"><div class="clbl">NPV at different discount rates — IRR crosses zero</div><canvas id="irrC" height="220"></canvas></div>
+  <div class="card">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;margin-bottom:14px;">IRR CALCULATION METHOD</div>
+    <div style="font-size:12.5px;color:var(--muted2);line-height:1.8;font-weight:300;">IRR is the discount rate at which NPV equals zero. Calculated by bisection method — testing trial rates until the sum of discounted cash flows exactly equals the initial investment.
+    <br/><br/><strong style="color:var(--text);">Formula:</strong><br/>NPV = 0 = −Investment + CF₁/(1+r) + CF₂/(1+r)² + CF₃/(1+r)³
+    <br/><br/>A project is viable when IRR exceeds the hurdle rate.</div>
+    <div id="irrOut" style="margin-top:18px;padding:14px;background:rgba(45,212,191,0.05);border:1px solid rgba(45,212,191,0.18);border-radius:7px;"></div>
+  </div>
+</div>
+</div>
+
+<!-- 08 GTM -->
+<div class="tp" id="tab-gtm">
+<div class="ph">
+  <div class="ey">08 — Go-to-Market Strategy</div>
+  <h2 class="pt">The <em>playbook</em></h2>
+  <p class="pd">Source: Market Research Report, Sections 7–8. Three phases: institutional-first, pilot-driven, privacy-led positioning.</p>
+</div>
+<div class="g2 gap24" style="margin-bottom:28px;">
+  <div>
+    <div class="stl">Recommended Positioning</div>
+    <div class="card cgold" style="margin-bottom:14px;font-size:13px;color:var(--muted2);line-height:1.8;font-weight:300;"><strong style="color:var(--gold);font-weight:500;">Core message (Market Research, Section 8):</strong> Institutions can get the productivity benefits of generative AI without surrendering control over data, deployment, and governance.</div>
+    <div class="card csm cteal" style="margin-bottom:10px;"><div style="font-size:10px;font-weight:500;color:var(--teal);margin-bottom:5px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">PRICING MODEL</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.6;">Annual license per institution — gives Anveza predictable revenue and fits institutional budget cycles. Avoids per-paper pricing that feels transactional for budget-constrained institutions.</div></div>
+    <div class="card csm" style="margin-bottom:10px;border-color:rgba(201,168,76,0.2);"><div style="font-size:10px;font-weight:500;color:var(--gold);margin-bottom:5px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">DEPLOYMENT MODEL</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.6;">Remote-access deployment — Anveza operates Aidra-E via screen sharing. The institution accesses through a browser. Lowers the on-prem infrastructure barrier while maintaining the privacy-first positioning.</div></div>
+    <div class="card csm" style="border-color:rgba(251,191,36,0.18);"><div style="font-size:10px;font-weight:500;color:var(--amber);margin-bottom:5px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">INITIAL WORKFLOW WEDGE</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.6;"><strong style="color:var(--text);">Narrow and high-frequency:</strong> answer sheet scanning, extraction, annotation, and correction. Lead with teacher time savings before explaining the governance model. (Market Research, Section 8)</div></div>
+  </div>
+  <div>
+    <div class="stl">Sales Funnel</div>
+    <div class="fn" id="funnelEl"></div>
+    <div class="snote" style="margin-top:10px;text-align:center;">Funnel figures are illustrative projections, not actual pipeline data.</div>
+  </div>
+</div>
+<div class="dvd"></div>
+<div class="stl">Three-Phase Rollout</div>
+<div class="tl" id="timelineEl"></div>
+<div class="dvd"></div>
+<div class="stl">Key Risks to Monitor</div>
+<div class="g3">
+  <div class="card csm cred"><div style="font-size:10px;font-weight:500;color:var(--red);margin-bottom:7px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">CATEGORY CROWDING</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.65;">Teacher-facing AI is already a busy market. MagicSchool and SchoolAI have meaningful product breadth, strong brands, or large installed user bases. Differentiation must be sharp and evidence-backed. (Market Research, Section 9)</div></div>
+  <div class="card csm cred"><div style="font-size:10px;font-weight:500;color:var(--red);margin-bottom:7px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">IMPLEMENTATION FRICTION</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.65;">Local deployment can lengthen sales cycles and create more work for institutional IT teams. Anveza needs a clear narrative for when the added complexity is worth it. (Market Research, Section 9)</div></div>
+  <div class="card csm cred"><div style="font-size:10px;font-weight:500;color:var(--red);margin-bottom:7px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">MESSAGING CONFUSION</div><div style="font-size:12.5px;color:var(--muted2);line-height:1.65;">Framing too broadly invites comparison with every AI-for-education platform. Framing too narrowly around privacy sounds like infrastructure rather than a tool that creates visible value for teachers. (Market Research, Section 9)</div></div>
+</div>
+<div class="snote" style="margin-top:14px;">Source: Market Research Report, Section 9 — Key Risks</div>
+</div>
+
+</div>
+
+<script>
+Chart.defaults.color='#7070a0';Chart.defaults.borderColor='#1f1f2e';Chart.defaults.font.family="'JetBrains Mono',monospace";Chart.defaults.font.size=10;
+const INSTS=[
+  {name:"IIT Bombay",city:"Mumbai, Maharashtra",type:"iit",abbr:"IITB",color:"#b91c1c"},
+  {name:"IIT Delhi",city:"New Delhi",type:"iit",abbr:"IITD",color:"#b91c1c"},
+  {name:"IIT Madras",city:"Chennai, Tamil Nadu",type:"iit",abbr:"IITM",color:"#b91c1c"},
+  {name:"IIT Kharagpur",city:"West Bengal",type:"iit",abbr:"IITKGP",color:"#b91c1c"},
+  {name:"IIT Hyderabad",city:"Hyderabad, Telangana",type:"iit",abbr:"IITH",color:"#b91c1c"},
+  {name:"IIT Roorkee",city:"Roorkee, Uttarakhand",type:"iit",abbr:"IITR",color:"#b91c1c"},
+  {name:"NIT Warangal",city:"Warangal, Telangana",type:"nit",abbr:"NITW",color:"#c2410c"},
+  {name:"NIT Trichy",city:"Tiruchirappalli, Tamil Nadu",type:"nit",abbr:"NITT",color:"#c2410c"},
+  {name:"NIT Surathkal",city:"Mangalore, Karnataka",type:"nit",abbr:"NITK",color:"#c2410c"},
+  {name:"NIT Calicut",city:"Kozhikode, Kerala",type:"nit",abbr:"NITC",color:"#c2410c"},
+  {name:"JNU",city:"New Delhi",type:"central",abbr:"JNU",color:"#6d28d9"},
+  {name:"University of Hyderabad",city:"Hyderabad, Telangana",type:"central",abbr:"UoH",color:"#6d28d9"},
+  {name:"Banaras Hindu University",city:"Varanasi, UP",type:"central",abbr:"BHU",color:"#6d28d9"},
+  {name:"Aligarh Muslim University",city:"Aligarh, UP",type:"central",abbr:"AMU",color:"#6d28d9"},
+  {name:"SPPU",city:"Pune, Maharashtra",type:"state",abbr:"SPPU",color:"#0e7490"},
+  {name:"University of Mumbai",city:"Mumbai, Maharashtra",type:"state",abbr:"MU",color:"#0e7490"},
+  {name:"Osmania University",city:"Hyderabad, Telangana",type:"state",abbr:"OU",color:"#0e7490"},
+  {name:"Anna University",city:"Chennai, Tamil Nadu",type:"state",abbr:"AU",color:"#0e7490"},
+  {name:"BITS Pilani",city:"Pilani, Rajasthan",type:"private",abbr:"BITS",color:"#374151"},
+  {name:"VIT University",city:"Vellore, Tamil Nadu",type:"private",abbr:"VIT",color:"#374151"},
+  {name:"Manipal Academy",city:"Manipal, Karnataka",type:"private",abbr:"MAHE",color:"#374151"},
+  {name:"SRM University",city:"Chennai, Tamil Nadu",type:"private",abbr:"SRM",color:"#374151"},
+];
+const IC={iit:{bg:"rgba(185,28,28,0.12)",c:"#fca5a5",b:"rgba(185,28,28,0.28)",l:"IIT"},nit:{bg:"rgba(194,65,12,0.12)",c:"#fdba74",b:"rgba(194,65,12,0.28)",l:"NIT"},central:{bg:"rgba(109,40,217,0.12)",c:"#c4b5fd",b:"rgba(109,40,217,0.28)",l:"Central"},state:{bg:"rgba(14,116,144,0.12)",c:"#67e8f9",b:"rgba(14,116,144,0.28)",l:"State"},private:{bg:"rgba(55,65,81,0.18)",c:"#9ca3af",b:"rgba(55,65,81,0.35)",l:"Private"}};
+const COMPS=[
+  {name:"Aidra-E",tagline:"Secure, privacy-preserving, locally deployable generative AI for teacher productivity. Workflow: scan → extract → annotate → correct.",ours:true,attrs:[{l:"Privacy / local deploy",v:95},{l:"India market fit",v:92},{l:"Answer sheet workflow",v:88},{l:"Feature breadth",v:42},{l:"Brand recognition",v:18}]},
+  {name:"MagicSchool",tagline:"80+ AI tools for teachers, district solutions, enterprise-grade security. Cloud-forward. (MagicSchool, 2026a)",ours:false,attrs:[{l:"Privacy / local deploy",v:28},{l:"India market fit",v:22},{l:"Answer sheet workflow",v:8},{l:"Feature breadth",v:95},{l:"Brand recognition",v:82}]},
+  {name:"Khanmigo",tagline:"Teaching assistant with prep support, classroom activities, progress reports. Strong trust brand via Khan Academy. (Khan Academy, 2026)",ours:false,attrs:[{l:"Privacy / local deploy",v:18},{l:"India market fit",v:48},{l:"Answer sheet workflow",v:8},{l:"Feature breadth",v:68},{l:"Brand recognition",v:88}]},
+  {name:"SchoolAI",tagline:"Lesson plans, rubrics, assessments, time savings. Education-native classroom platform. (SchoolAI, 2026)",ours:false,attrs:[{l:"Privacy / local deploy",v:22},{l:"India market fit",v:18},{l:"Answer sheet workflow",v:12},{l:"Feature breadth",v:72},{l:"Brand recognition",v:58}]},
+  {name:"Gradescope (Turnitin)",tagline:"AI-assisted grading of exams and assignments at scale. Rubric-based, LMS-integrated, cloud-based. (Market Research, Section 5)",ours:false,attrs:[{l:"Privacy / local deploy",v:18},{l:"India market fit",v:32},{l:"Answer sheet workflow",v:72},{l:"Feature breadth",v:48},{l:"Brand recognition",v:52}]},
+];
+const PESTEL=[
+  {letter:"P",name:"Political",color:"#7c6bff",items:[{t:"Rs. 500 cr. CoE for AI in Education",s:"Union Budget 2025-26. Source: MoE, 2025a",tag:"OPP"},{t:"NEP 2020 — technology in pedagogy mandate",s:"Policy justification for institutional procurement decision-makers",tag:"OPP"},{t:"Long government sales cycles",s:"Public-sector procurement is slow and document-heavy; multi-quarter approval timelines",tag:"RISK"},{t:"Data localisation policy push",s:"India's regulatory trend toward data sovereignty makes locally deployable AI more politically palatable",tag:"OPP"}]},
+  {letter:"E",name:"Economic",color:"#2dd4bf",items:[{t:"India EdTech AI at 32.4% CAGR",s:"USD 196.4M (2024) to USD 1,140M (2030). Source: Grand View Research, 2025b",tag:"OPP"},{t:"1,000+ universities and 40,000+ colleges",s:"Most facing faculty workload and admin productivity pressure. Source: UGC/AISHE",tag:"OPP"},{t:"Budget constraints at institutions",s:"Cost-sensitive buyers; competing against free tools makes pricing difficult without demonstrable ROI",tag:"RISK"},{t:"Local deployment cost premium",s:"On-prem infrastructure adds upfront costs vs cloud SaaS; institutions must see governance value",tag:"RISK"}]},
+  {letter:"S",name:"Social",color:"#f87171",items:[{t:"86% of education organisations use GenAI",s:"Highest adoption rate across all industries. Source: Microsoft, 2025",tag:"OPP"},{t:"Teacher workload crisis",s:"Core value proposition aligns with documented pain point confirmed by convergent competitor messaging",tag:"OPP"},{t:"Teacher resistance and professional identity concern",s:"Many educators view AI as a threat. Low teacher buy-in can undermine institutional purchase",tag:"RISK"},{t:"Low AI literacy among teachers",s:"Complex local deployment requires institutional IT support, limiting grassroots adoption",tag:"RISK"}]},
+  {letter:"T",name:"Technological",color:"#fbbf24",items:[{t:"Proprietary algorithms — sustained competitive advantage",s:"VRIO rates this as meeting all four criteria. Source: VRIO Analysis (Capstone, 2026)",tag:"OPP"},{t:"60% of AI-in-ed revenue is cloud-first",s:"Makes local deployment a genuine differentiator. Source: GVR, 2025a",tag:"OPP"},{t:"Rapid commoditisation of GenAI",s:"Basic content generation is fast becoming a feature, not a product. Source: Market Research, Section 6",tag:"RISK"},{t:"User data flywheel",s:"Accumulated learning outcome data (VRIO: Sustained Advantage) creates compounding improvement loop",tag:"OPP"}]},
+  {letter:"En",name:"Environmental",color:"#6b7280",items:[{t:"On-prem energy consumption",s:"Local deployment means institutions bear their own compute energy costs; varies significantly by region in India",tag:"WATCH"},{t:"ESG pressures on institutions",s:"Universities increasingly must report on sustainable operations; AI productivity gains reduce administrative waste",tag:"OPP"},{t:"Digital access inequality",s:"Rural or underfunded institutions may lack hardware and bandwidth, narrowing near-term addressable market",tag:"RISK"}]},
+  {letter:"L",name:"Legal",color:"#a78bfa",items:[{t:"DPDP Act (2023) — structural advantage",s:"Removes Anveza from data processor liability chain entirely. Source: DPDP Act, 2023",tag:"OPP"},{t:"Institutional procurement liability",s:"Universities require SLAs, data liability clauses, and indemnification terms — real burden for early-stage company",tag:"RISK"},{t:"Evolving AI regulation via MeitY",s:"India lacks dedicated AI legislation; MeitY has signalled intent. Window to establish market position is open",tag:"WATCH"}]},
+];
+const GTM=[
+  {num:"PHASE 01",title:"Pilot & Prove",time:"Months 1–6",dot:"#c9a84c",steps:["<strong>2–3 structured pilots</strong> at higher education institutions with high answer sheet volume — management and engineering programmes","<strong>Free for institutions</strong> — Anveza absorbs cost in exchange for before/after data and a reference relationship","<strong>Capture 4 metrics per pilot:</strong> time saved per paper, OCR accuracy rate, faculty satisfaction score, institutional comfort with local deployment","<strong>Remote-access deployment</strong> — Anveza operates system via screen share; institution accesses through browser","<strong>Document pilot results</strong> — these become the primary sales asset for Phase 2"]},
+  {num:"PHASE 02",title:"First Revenue",time:"Months 7–18",dot:"#2dd4bf",steps:["<strong>Convert pilot institutions</strong> to paid annual licenses — pilot data makes the ROI case concrete and defensible","<strong>Target additional institutions</strong> using pilot case studies as primary sales collateral","<strong>Lead every sales conversation with DPDP Act compliance</strong> — institutional liability, not just product features","<strong>Standardise SLA template</strong> — reduce legal negotiation time on each new institutional deal","<strong>Structured teacher onboarding programme</strong> — address resistance and low AI literacy; critical to actual usage post-purchase"]},
+  {num:"PHASE 03",title:"Scale",time:"Months 19–36",dot:"#fbbf24",steps:["<strong>Scale to 35+ institutions</strong> — transition from founder-led sales to first dedicated sales resource or channel partnership","<strong>State university consortia</strong> — one MoU with a state higher education department can unlock multiple affiliated colleges simultaneously","<strong>Expand use cases</strong> beyond answer sheet processing — lesson planning, faculty reporting, internal assessments","<strong>Government tender positioning</strong> — apply for MeitY and Ministry of Education AI procurement programmes using established pilot track record"]},
+];
+const FUNNEL=[{l:"Target institutions identified",n:"1,000+",w:"100%",bg:"rgba(201,168,76,0.16)"},{l:"Institutions outreached",n:"~200",w:"82%",bg:"rgba(201,168,76,0.25)"},{l:"Discovery calls / demos",n:"~60",w:"60%",bg:"rgba(201,168,76,0.36)"},{l:"Pilots initiated",n:"~15",w:"44%",bg:"rgba(201,168,76,0.5)"},{l:"Paid conversions (60%)",n:"~9",w:"28%",bg:"rgba(201,168,76,0.67)"},{l:"Renewing customers",n:"~7",w:"16%",bg:"#c9a84c"}];
+
+new Chart(document.getElementById('mktC'),{type:'bar',data:{labels:['2024','2025','2026','2027','2028','2029','2030'],datasets:[{label:'USD M',data:[196.4,260.0,344.2,455.7,603.0,798.4,1140.3],backgroundColor:ctx=>{const g=ctx.chart.ctx.createLinearGradient(0,0,0,260);g.addColorStop(0,'rgba(201,168,76,0.85)');g.addColorStop(1,'rgba(201,168,76,0.18)');return g;},borderColor:'#c9a84c',borderWidth:1,borderRadius:4}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(31,31,46,0.6)'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('depC'),{type:'doughnut',data:{labels:['Cloud (60.1%)','On-premise / Other (39.9%)'],datasets:[{data:[60.1,39.9],backgroundColor:['rgba(248,113,113,0.72)','rgba(45,212,191,0.72)'],borderColor:['#f87171','#2dd4bf'],borderWidth:2}]},options:{responsive:true,cutout:'60%',plugins:{legend:{position:'bottom'}}}});
+new Chart(document.getElementById('instTypeC'),{type:'bar',data:{labels:['State Univs','Private Colleges','Deemed Univs','Central Univs','NITs','IITs'],datasets:[{label:'Approx. count',data:[316,360,130,54,31,23],backgroundColor:['rgba(6,182,212,0.65)','rgba(107,107,138,0.55)','rgba(251,191,36,0.6)','rgba(124,107,255,0.65)','rgba(248,113,113,0.5)','rgba(248,113,113,0.7)'],borderRadius:4}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(31,31,46,0.5)'}},y:{grid:{display:false}}}}});
+new Chart(document.getElementById('radarC'),{type:'radar',data:{labels:['Privacy/Local','India Fit','Answer Sheet','Feature Breadth','Brand Recognition'],datasets:[{label:'Aidra-E',data:[95,92,88,42,18],backgroundColor:'rgba(45,212,191,0.11)',borderColor:'#2dd4bf',pointBackgroundColor:'#2dd4bf',borderWidth:2},{label:'MagicSchool',data:[28,22,8,95,82],backgroundColor:'rgba(248,113,113,0.07)',borderColor:'#f87171',pointBackgroundColor:'#f87171',borderWidth:1.5,borderDash:[4,4]},{label:'Gradescope',data:[18,32,72,48,52],backgroundColor:'rgba(251,191,36,0.07)',borderColor:'#fbbf24',pointBackgroundColor:'#fbbf24',borderWidth:1.5,borderDash:[2,4]}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{r:{backgroundColor:'rgba(17,17,24,0.5)',grid:{color:'rgba(31,31,46,0.7)'},pointLabels:{color:'#7070a0',font:{size:9.5}},ticks:{display:false},min:0,max:100}}}});
+new Chart(document.getElementById('vrioC'),{type:'bar',data:{labels:['Aidra-E','MagicSchool','Khanmigo','SchoolAI'],datasets:[{label:'Value',data:[95,60,75,55],backgroundColor:'rgba(201,168,76,0.68)',borderRadius:3},{label:'Rarity',data:[90,45,40,40],backgroundColor:'rgba(45,212,191,0.62)',borderRadius:3},{label:'Imitability barrier',data:[85,55,50,50],backgroundColor:'rgba(167,139,250,0.62)',borderRadius:3}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,max:100,grid:{color:'rgba(31,31,46,0.6)'}},x:{grid:{display:false}}}}});
+
+document.getElementById('compGrid').innerHTML=COMPS.map(c=>`<div class="cc${c.ours?' ours':''}">${c.ours?'<span class="ot">OUR PRODUCT</span>':''}<div class="cn">${c.name}</div><div class="ct2">${c.tagline}</div>${c.attrs.map(a=>`<div class="ar"><span class="al">${a.l}</span><div class="ab"><div class="af" style="width:${a.v}%;background:${c.ours?'#2dd4bf':'#f87171'}"></div></div><span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:${c.ours?'#2dd4bf':'#f87171'};min-width:24px;text-align:right">${a.v}</span></div>`).join('')}</div>`).join('');
+
+function buildInst(f){const list=f==='all'?INSTS:INSTS.filter(i=>i.type===f);document.getElementById('instGrid').innerHTML=list.map(i=>{const c=IC[i.type];return`<div class="icard"><div class="iav" style="background:${i.color}">${i.abbr.substring(0,4)}</div><div class="iname">${i.name}</div><div class="icity">${i.city}</div><span class="ichip" style="background:${c.bg};color:${c.c};border:1px solid ${c.b}">${c.l}</span></div>`;}).join('');}
+buildInst('all');
+document.getElementById('instFilters').querySelectorAll('.ifbtn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.ifbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');buildInst(b.dataset.f);});});
+document.getElementById('pestelGrid').innerHTML=PESTEL.map(p=>`<div class="pc"><div class="pl" style="color:${p.color}">${p.letter}</div><div class="pn">${p.name}</div><div class="pi-list">${p.items.map(item=>`<div class="pi-row"><div class="pi-top"><div class="pi-title">${item.t}</div><span class="badge b${item.tag.toLowerCase()}">${item.tag}</span></div><div class="pi-sub">${item.s}</div></div>`).join('')}</div></div>`).join('');
+document.getElementById('timelineEl').innerHTML=GTM.map(p=>`<div class="ph2"><div class="pdot" style="border-color:${p.dot}"></div><div class="phd"><div class="pnum">${p.num}</div><div class="ptitle">${p.title}</div><div class="ptime">${p.time}</div></div><div class="pbody"><div class="psteps">${p.steps.map(s=>`<div class="pstep">${s}</div>`).join('')}</div></div></div>`).join('');
+document.getElementById('funnelEl').innerHTML=FUNNEL.map(f=>`<div style="width:100%;display:flex;justify-content:center;margin-bottom:2px;"><div class="fs" style="width:${f.w};max-width:100%;background:${f.bg};padding:9px 18px;border-radius:5px;display:flex;justify-content:space-between;align-items:center;gap:14px;"><span class="fl">${f.l}</span><span class="fv">${f.n}</span></div></div>`).join('');
+
+let rC,cC,iC;
+function gI(){return{price:+document.getElementById('s-price').value,y1:+document.getElementById('s-y1').value,y2:+document.getElementById('s-y2').value,y3:+document.getElementById('s-y3').value,inv:+document.getElementById('s-inv').value,onb:+document.getElementById('s-onb').value,sup:+document.getElementById('s-sup').value,disc:+document.getElementById('s-disc').value/100};}
+function calc(i){const{price,y1,y2,y3,inv,onb,sup,disc}=i;const SC=300000;const rev=[y1,y2,y3].map(n=>n*price);const op=[y1,y2,y3].map(n=>n*onb+n*sup+SC);const ncf=rev.map((r,i)=>r-op[i]);const df=ncf.map((_,i)=>1/Math.pow(1+disc,i+1));const dcf=ncf.map((cf,i)=>cf*df[i]);const tpv=dcf.reduce((a,b)=>a+b,0);const npv=tpv-inv;const tn=ncf.reduce((a,b)=>a+b,0);let cum=-inv,pb=null;for(let i=0;i<ncf.length;i++){const p=cum;cum+=ncf[i];if(cum>=0&&pb===null)pb=i+(-p/ncf[i]);}let lo=-0.99,hi=25;for(let k=0;k<500;k++){const m=(lo+hi)/2;const v=ncf.reduce((a,cf,i)=>a+cf/Math.pow(1+m,i+1),-inv);if(v>0)lo=m;else hi=m;}const irr=(lo+hi)/2;return{rev,op,ncf,df,dcf,tpv,npv,tn,irr,pi:tpv/inv,pb,roi:tn/inv,inv};}
+function fi(n){const a=Math.abs(n);const s=n<0?'-':'';if(a>=10000000)return s+'Rs.'+(a/10000000).toFixed(2)+'Cr';if(a>=100000)return s+'Rs.'+(a/100000).toFixed(2)+'L';if(a>=1000)return s+'Rs.'+(a/1000).toFixed(0)+'K';return s+'Rs.'+a.toFixed(0);}
+function upL(i){document.getElementById('sv-price').textContent='Rs.'+(i.price/100000).toFixed(1)+'L';document.getElementById('sv-y1').textContent=i.y1;document.getElementById('sv-y2').textContent=i.y2;document.getElementById('sv-y3').textContent=i.y3;document.getElementById('sv-inv').textContent='Rs.'+(i.inv/100000).toFixed(0)+'L';document.getElementById('sv-onb').textContent='Rs.'+(i.onb/1000).toFixed(0)+'K';document.getElementById('sv-sup').textContent='Rs.'+(i.sup/1000).toFixed(0)+'K';document.getElementById('sv-disc').textContent=(i.disc*100).toFixed(0)+'%';}
+function upK(f,i){const pb=f.pb!==null?`${Math.floor(f.pb)}y ${Math.round((f.pb-Math.floor(f.pb))*12)}m`:'> 3yr';const ks=[{l:'NPV',v:fi(f.npv),c:f.npv>=0?'#2dd4bf':'#f87171'},{l:'IRR',v:(f.irr*100).toFixed(0)+'%',c:f.irr>i.disc?'#2dd4bf':'#f87171'},{l:'Payback',v:pb,c:'#fbbf24'},{l:'ROI (3yr)',v:(f.roi*100).toFixed(0)+'%',c:'#2dd4bf'},{l:'Profit. Index',v:f.pi.toFixed(2),c:f.pi>1?'#2dd4bf':'#f87171'},{l:'Total PV',v:fi(f.tpv),c:'#c9a84c'}];document.getElementById('kpiStrip').innerHTML=ks.map(k=>`<div class="kbox"><div class="kv" style="color:${k.c}">${k.v}</div><div class="kl">${k.l}</div></div>`).join('');}
+function upD(f){let cp=-f.inv;const rows=[`<tr><td>Year 0</td><td>—</td><td>${fi(f.inv)}</td><td class="tr">${fi(-f.inv)}</td><td>1.000</td><td class="tr">${fi(-f.inv)}</td><td class="tr">${fi(-f.inv)}</td></tr>`];f.ncf.forEach((n,i)=>{cp+=f.dcf[i];rows.push(`<tr><td>Year ${i+1}</td><td class="tg">${fi(f.rev[i])}</td><td>${fi(f.op[i])}</td><td class="${n>=0?'tg':'tr'}">${fi(n)}</td><td>${f.df[i].toFixed(3)}</td><td class="tg">${fi(f.dcf[i])}</td><td class="${cp>=0?'tg':'tr'}">${fi(cp)}</td></tr>`);});document.getElementById('dcfBody').innerHTML=rows.join('');}
+function upCh(f){if(rC)rC.destroy();rC=new Chart(document.getElementById('revC'),{type:'bar',data:{labels:['Year 1','Year 2','Year 3'],datasets:[{label:'Revenue',data:f.rev,backgroundColor:'rgba(45,212,191,0.68)',borderRadius:4},{label:'Operating Costs',data:f.op,backgroundColor:'rgba(248,113,113,0.58)',borderRadius:4}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,grid:{color:'rgba(31,31,46,0.5)'},ticks:{callback:v=>fi(v)}},x:{grid:{display:false}}}}});if(cC)cC.destroy();const cum=[-f.inv];let c=-f.inv;f.ncf.forEach(n=>{c+=n;cum.push(c);});cC=new Chart(document.getElementById('cfC'),{type:'line',data:{labels:['Y0','Year 1','Year 2','Year 3'],datasets:[{label:'Cumulative CF',data:cum,borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.07)',fill:true,tension:0.4,pointRadius:5,pointBackgroundColor:cum.map(v=>v>=0?'#2dd4bf':'#f87171')}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(31,31,46,0.5)'},ticks:{callback:v=>fi(v)}},x:{grid:{display:false}}}}});}
+function upS(i){const prices=[200000,300000,400000,500000,600000,700000,800000];const insts=[2,3,5,7,10,15,20];let h='<table class="st2"><tr><th>Y1 / Price</th>';prices.forEach(p=>{h+=`<th>Rs.${(p/100000).toFixed(1)}L</th>`;});h+='</tr>';insts.forEach(n=>{h+=`<tr><td>${n} inst.</td>`;prices.forEach(p=>{const nc=[n,n*3,n*7].map(ni=>ni*p-(ni*i.onb+ni*i.sup+300000));const pv=nc.reduce((a,cf,ii)=>a+cf/Math.pow(1+i.disc,ii+1),0);const nv=Math.round(pv-i.inv);const pos=nv>=0;h+=`<td style="color:${pos?'#2dd4bf':'#f87171'};background:${pos?`rgba(45,212,191,${Math.min(0.2,nv/20000000)})`:`rgba(248,113,113,${Math.min(0.22,Math.abs(nv)/10000000)})`}">${pos?'':'-'}Rs.${(Math.abs(nv)/100000).toFixed(1)}L</td>`;});h+='</tr>';});h+='</table>';document.getElementById('sensWrap').innerHTML=h;}
+function upI(f,i){if(iC)iC.destroy();const rates=[0,0.1,0.2,0.5,1,1.5,2,2.5,3,4,5];const npvs=rates.map(r=>f.ncf.reduce((a,cf,ii)=>a+cf/Math.pow(1+r,ii+1),-f.inv));iC=new Chart(document.getElementById('irrC'),{type:'line',data:{labels:rates.map(r=>`${(r*100).toFixed(0)}%`),datasets:[{label:'NPV',data:npvs,borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.06)',fill:true,tension:0.4,pointRadius:4},{label:'NPV = 0',data:rates.map(()=>0),borderColor:'rgba(248,113,113,0.38)',borderDash:[5,5],pointRadius:0,borderWidth:1}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{grid:{color:'rgba(31,31,46,0.5)'},ticks:{callback:v=>fi(v)}},x:{grid:{display:false}}}}});const pb=f.pb!==null?`${Math.floor(f.pb)} year${Math.floor(f.pb)!==1?'s':''} and ${Math.round((f.pb-Math.floor(f.pb))*12)} months`:'Not recovered in 3 years';document.getElementById('irrOut').innerHTML=`<div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1.5px;margin-bottom:8px;">CURRENT RESULTS</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:11.5px;"><div><span style="color:var(--muted);">IRR ≈ </span><strong style="color:#2dd4bf;">${(f.irr*100).toFixed(1)}%</strong></div><div><span style="color:var(--muted);">Hurdle: </span><strong style="color:#c9a84c;">${(i.disc*100).toFixed(0)}%</strong></div><div><span style="color:var(--muted);">NPV: </span><strong style="color:${f.npv>=0?'#2dd4bf':'#f87171'};">${fi(f.npv)}</strong></div><div><span style="color:var(--muted);">Payback: </span><strong style="color:#fbbf24;">${pb}</strong></div></div>`;}
+function refresh(){const i=gI();upL(i);const f=calc(i);upK(f,i);upD(f);upCh(f);upS(i);upI(f,i);}
+['s-price','s-y1','s-y2','s-y3','s-inv','s-onb','s-sup','s-disc'].forEach(id=>{document.getElementById(id).addEventListener('input',refresh);});
+refresh();
+function go(id){document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-i').forEach(n=>n.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');document.querySelector(`.nav-i[data-tab="${id}"]`).classList.add('active');window.scrollTo(0,0);if(id==='revenue')refresh();}
+document.querySelectorAll('.nav-i').forEach(item=>{item.addEventListener('click',()=>go(item.dataset.tab));});
+</script>
+</body>
+</html>
